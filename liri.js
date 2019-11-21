@@ -4,3 +4,5 @@ require("dotenv").config();
 
 // Include the axios npm package 
 var axios = require("axios");
+
+var keys = require("./keys.js");
