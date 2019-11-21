@@ -1,0 +1,24 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "In order to meet the Employer Competitive standards and be ready to show your application to employers, the `README.md` file should meet the following criteria:",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LisaMichael/liri-node-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LisaMichael/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/LisaMichael/liri-node-app#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "moment": "^2.24.0"
+  }
+}
