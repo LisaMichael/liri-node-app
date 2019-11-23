@@ -8,8 +8,9 @@ var keys = require("./keys.js");
 var fs = require("fs");
 
 // "Bands in Town code should go here for "concert-this" code "
-
-
+// bands in town query url: 
+// https://rest.bandsintown.com/artists/+ artist + /events?app_id=codingbootcamp
+var bands = "";
 
 
 // spotify code should go here for "spotify-this-song" code "
@@ -22,6 +23,7 @@ var nodeArgs = process.argv;
 
 // var movie=process.argv[2];
 
+// declare your moviename
 let movieName = "";
 
 
@@ -38,16 +40,19 @@ for (var i = 2; i < nodeArgs.length; i++) {
   }
 }
 
+// api response string for omdb api 
 var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy"
 
+//console log my query url so i can view the response data
 console.log(queryUrl);
-// We then run the request with axios module on a URL with a JSON
+
+// We then run the request with axios module on the URL with a JSON
 axios.get(queryUrl).then(
   function (response) {
 
-    // console.log(response);
+    
 
-    // Then we print out the imdbRating
+    // Then we print out the response data 
     console.log("The movie's Title is: " + response.data.Title);
     console.log("The year of the movie is: " + response.data.Year);
     console.log("The movie's IMDB rating is: " + response.data.imdbRating);
@@ -58,6 +63,7 @@ axios.get(queryUrl).then(
     console.log("The movie actors are: " + response.data.Actors);
   }
 )
+//logic for catching errors 
   .catch(function (error) {
     if (error.response) {
       // The request was made and the server responded with a status code
