@@ -5,47 +5,60 @@ require("dotenv").config();
 // Include the axios npm package 
 var axios = require("axios")
 var keys = require("./keys.js");
-
+var fs = require("fs");
 
 // "Bands in Town code should go here for "concert-this" code "
 
 
+
+
 // spotify code should go here for "spotify-this-song" code "
+var spotify = require("node-spotify-api");
 
 
 // OMDBAPI code should go here for "movie-this" code "
 
-// var nodeArgs = process.argv;
+var nodeArgs = process.argv;
 
-var movie=process.argv[2];
+// var movie=process.argv[2];
+
+let movieName = "";
 
 
-// for (var i = 2; i < nodeArgs.length; i++) {
+// referenced for loop in wk 10 exercise 18 OMDB_Axios_Students to 
+// create loop for movies titles containing mutliple words
 
-//     if (i > 2 && i < nodeArgs.length) {
-//       movieName = movieName + "+" + nodeArgs[i];
-//     } else {
-//       movieName += nodeArgs[i];
-  
-//     }
-//   }
-  
-var queryUrl="http://www.omdbapi.com/?t=" + movie +  "&y=&plot=short&apikey=trilogy"
+for (var i = 2; i < nodeArgs.length; i++) {
+
+  if (i > 2 && i < nodeArgs.length) {
+    movieName = movieName + "+" + nodeArgs[i];
+  } else {
+    movieName += nodeArgs[i];
+
+  }
+}
+
+var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy"
 
 console.log(queryUrl);
 // We then run the request with axios module on a URL with a JSON
 axios.get(queryUrl).then(
-  function(response) {
+  function (response) {
+
+    // console.log(response);
+
     // Then we print out the imdbRating
     console.log("The movie's Title is: " + response.data.Title);
     console.log("The year of the movie is: " + response.data.Year);
-    console.log("The movie's rating is: " + response.data.imdbRating);
+    console.log("The movie's IMDB rating is: " + response.data.imdbRating);
     console.log("The movie's Rotten Tomatoes rating is: " + response.data.Ratings[1].Value);
-    
-
+    console.log("The movie's Country of origin is: " + response.data.Country);
+    console.log("The movie's Language is: " + response.data.Language);
+    console.log("The plot of the movie is: " + response.data.Plot);
+    console.log("The movie actors are: " + response.data.Actors);
   }
 )
-.catch(function(error) {
+  .catch(function (error) {
     if (error.response) {
       // The request was made and the server responded with a status code
       // that falls out of the range of 2xx
