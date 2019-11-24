@@ -1,6 +1,6 @@
 ###### AUTHOR: Lisa Michael
-## HW: WK10 
-###### LIRI
+###### HW: WK10 
+###### LIRI-NODE-APP
 
 
 In order to meet the Employer Competitive standards and be ready to show your application to employers, the `README.md` file should meet the following criteria:
@@ -37,7 +37,7 @@ We are going to run one of four commands, depending upon what type output you ar
 
 Your options are: 
 
-A) node liri.js concert-this <name of concert event or artist>
+A) `node liri.js concert-this <name of concert event or artist>`
     
 B) 'node liri.js spotify-this-song <name of song track>'
     
@@ -46,7 +46,7 @@ C) 'node liri.js movie-this <title of movie>'
 D) node liri.js do-what-it-says 
     
 
-## OPTION A: node liri.js concert-this <name of concert event or artist>
+## OPTION A: *node liri.js concert-this <name of concert event or artist>*
 
 Example command: 
 node liri.js concert-this Taylor Swift 
@@ -59,7 +59,7 @@ The response returned back from the "concert-this" CLI will return:
 
 
 
-## OPTION B: node liri.js spotify-this-song <name of song track>
+## OPTION B: *node liri.js spotify-this-song <name of song track>*
 
 Example command: 
 node liri.js spotify-this-song Stairway to Heaven
@@ -74,7 +74,7 @@ The response returned back from the "spotify-this-song" CLI will return:
 
 ##### NOTE: If no artist name is specified, the default response will display the song "The Sign" by the artist "Ace of Base". 
 
-## OPTION C: node liri.js movie-this <title of movie>
+## OPTION C: *node liri.js movie-this <title of movie>*
 
 Example command: 
 node liri.js movie this Terminiator
@@ -92,7 +92,7 @@ The response returned back from the "movie-this" CLI will return:
 
 ###### NOTE: If the user does NOT include a movie name in the command, the CLI will output data for the movie 'Mr. Nobody.'
 
-## OPTION D: node liri.js do-what-it-says 
+## OPTION D: *node liri.js do-what-it-says*
 
 4. Include screenshots, gifs or videos of the app functioning
 5. Contain a link to a deployed version of the app
