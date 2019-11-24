@@ -102,6 +102,7 @@ function song() {
 
 function movieQuery() {
 
+  // if userput for movie-this is blank, default to Mr. Nobody.
   if (userInput === "") {
     var queryUrl =  "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=trilogy"
     console.log(" * If you haven't watched \"Mr. Nobody,\" then you should: <http://www.imdb.com/title/tt0485947/>");
