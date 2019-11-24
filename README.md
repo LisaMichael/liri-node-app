@@ -46,7 +46,7 @@ C) `node liri.js movie-this <title of movie>`
 D) `node liri.js do-what-it-says` 
     
 
-## OPTION A: 
+## OPTION A: Search for concert events 
 * * `node liri.js concert-this <name of concert event or artist>`
 
 Example command: 
@@ -60,7 +60,7 @@ The response returned back from the "concert-this" CLI will return:
 
 
 
-## OPTION B: 
+## OPTION B: Search for artist on spotify.com
 * * `node liri.js spotify-this-song <name of song track>`
 
 Example command: 
@@ -76,7 +76,8 @@ The response returned back from the "spotify-this-song" CLI will return:
 
 ##### NOTE: If no artist name is specified, the default response will display the song "The Sign" by the artist "Ace of Base". 
 
-## OPTION C: *node liri.js movie-this <title of movie>*
+## OPTION C:
+* * `node liri.js movie-this <title of movie>`
 
 Example command: 
 node liri.js movie this Terminiator
@@ -94,7 +95,10 @@ The response returned back from the "movie-this" CLI will return:
 
 ###### NOTE: If the user does NOT include a movie name in the command, the CLI will output data for the movie 'Mr. Nobody.'
 
-## OPTION D: *node liri.js do-what-it-says*
+## OPTION D: 
+* * `node liri.js do-what-it-says`
+
+
 
 4. Include screenshots, gifs or videos of the app functioning
 5. Contain a link to a deployed version of the app
