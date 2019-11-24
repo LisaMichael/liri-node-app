@@ -1,7 +1,6 @@
 // use dotenv package takes what is in your .env file and puts it in process.env
 require("dotenv").config();
 
-
 // declare npm packages 
 
 //Axios is used to send asynchronous HTTP requests to REST endpoints and perform CRUD operations
@@ -39,6 +38,9 @@ switch (task) {
     movieQuery();
     break;
 
+  case "do-what-it-says":
+    doRandom();
+    break;
 }
 
 // "Bands in Town code should go here for "concert-this" code "
@@ -53,7 +55,7 @@ function bands() {
   axios.get(bandQuery).then(
     function (response) {
       // console.log(response);
-     
+
 
       let venuesArray = response.data;
       console.log("Venue: ", response.data[0].venue.name);
@@ -64,8 +66,8 @@ function bands() {
       var eventDateTime = moment(response.data[0].datetime);
 
       console.log("Venue location: " + response.data[0].venue.city + " " + response.data[0].venue.region + ", " + response.data[0].venue.country);
-      
-// display date time in MM/DD/YYYY format
+
+      // display date time in MM/DD/YYYY format
       console.log("Event Date & Time: " + eventDateTime.format("MM/DD/YYYY"));
 
     })
@@ -97,7 +99,7 @@ function bands() {
 function song() {
 
   // this code was taken from example listed on https://www.npmjs.com/package/node-spotify-api
-  
+
   //if the user input for spotify-this-song is blank, default to Ace of Base , "The Sign"
   if (userInput === "") {
     userInput = "The Sign ace of base";
@@ -105,38 +107,38 @@ function song() {
       .search({ type: 'track', query: userInput, limit: 1 })
       .then(function (response) {
 
-      let spotifyResults =
-      "--------------------------------------------------------------------" +
-      "\nArtist(s): " + response.tracks.items[0].artists[0].name +
-      "\nSong Name: " + response.tracks.items[0].name +
-      "\nAlbum Name: " + response.tracks.items[0].album.name +
-      "\nPreview Link: " + response.tracks.items[0].preview_url;
-
-    console.log(spotifyResults);
-  })
-  }
-else{
-
-  // Display the first 5 responses for song entered in "Spotify-this-song"
-  spotify
-    .search({ type: 'track', query: userInput, limit: 5 })
-    .then(function (response) {
-
-      for (let i = 0; i < 5; i++) {
         let spotifyResults =
           "--------------------------------------------------------------------" +
-          "\nArtist(s): " + response.tracks.items[i].artists[0].name +
-          "\nSong Name: " + response.tracks.items[i].name +
-          "\nAlbum Name: " + response.tracks.items[i].album.name +
-          "\nPreview Link: " + response.tracks.items[i].preview_url;
+          "\nArtist(s): " + response.tracks.items[0].artists[0].name +
+          "\nSong Name: " + response.tracks.items[0].name +
+          "\nAlbum Name: " + response.tracks.items[0].album.name +
+          "\nPreview Link: " + response.tracks.items[0].preview_url;
 
         console.log(spotifyResults);
-      }
-    })
-  
-    .catch(function (err) {
-      console.log(err);
-    });
+      })
+  }
+  else {
+
+    // Display the first 5 responses for song entered in "Spotify-this-song"
+    spotify
+      .search({ type: 'track', query: userInput, limit: 5 })
+      .then(function (response) {
+
+        for (let i = 0; i < 5; i++) {
+          let spotifyResults =
+            "--------------------------------------------------------------------" +
+            "\nArtist(s): " + response.tracks.items[i].artists[0].name +
+            "\nSong Name: " + response.tracks.items[i].name +
+            "\nAlbum Name: " + response.tracks.items[i].album.name +
+            "\nPreview Link: " + response.tracks.items[i].preview_url;
+
+          console.log(spotifyResults);
+        }
+      })
+
+      .catch(function (err) {
+        console.log(err);
+      });
   }
 } // end of song() function 
 
@@ -204,3 +206,35 @@ function movieQuery() {
 
 // code should go here for "do-what-it-says" code "
 
+function doRandom() {
+  fs.readFile("random.txt", "utf8", function (error, data) {
+    let dataArr = data.split(",");
+    console.log(data);
+    task = (dataArr[0]);
+    userInput = dataArr[1];
+    // console.log(task);
+    // console.log(userInput);
+
+    switch (task) {
+      case "concert-this":
+        bands();
+        break;
+    
+      case "spotify-this-song":
+        song();
+        break;
+    
+      case "movie-this":
+        movieQuery();
+        break;
+    
+      case "do-what-it-says":
+        doRandom();
+        break;
+    }
+    // If the code experiences any errors it will log the error to the console.
+    if (error) {
+      return console.log(error);
+    }
+  });
+}
