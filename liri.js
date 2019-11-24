@@ -63,7 +63,7 @@ function bands() {
       //sent variable for datetime , and use moment to change format
       var eventDateTime = moment(response.data[0].datetime);
 
-      console.log("Venue location: " + response.data[0].venue.city);
+      console.log("Venue location: " + response.data[0].venue.city + " " + response.data[0].venue.region + ", " + response.data[0].venue.country);
       
 // display date time in MM/DD/YYYY format
       console.log("Event Date & Time: " + eventDateTime.format("MM/DD/YYYY"));
