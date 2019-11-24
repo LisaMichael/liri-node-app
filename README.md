@@ -41,7 +41,7 @@ A) node liri.js concert-this <name of concert event or artist>
     
 B) node liri.js spotify-this-song <name of song track>
     
-C) node liri.js movie-this <title of movie>
+C) node liri.js movie-this &lt<title of movie>
     
 D) node liri.js do-what-it-says 
     
