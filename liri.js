@@ -79,13 +79,27 @@ function bands() {
 function song() {
 
   // this code was taken from example listed on https://www.npmjs.com/package/node-spotify-api
-  if (!userInput) {
-    userInput = "The Sign";
+  if (userInput === "") {
+    userInput = "The Sign ace of base";
+    spotify
+      .search({ type: 'track', query: userInput, limit: 1 })
+      .then(function (response) {
+
+      let spotifyResults =
+      "--------------------------------------------------------------------" +
+      "\nArtist(s): " + response.tracks.items[0].artists[0].name +
+      "\nSong Name: " + response.tracks.items[0].name +
+      "\nAlbum Name: " + response.tracks.items[0].album.name +
+      "\nPreview Link: " + response.tracks.items[0].preview_url;
+
+    console.log(spotifyResults);
+  })
   }
+else{
   spotify
-    .search({ type: 'track', query: userInput })
+    .search({ type: 'track', query: userInput, limit: 5 })
     .then(function (response) {
-      // console.log(userInput);
+
       for (let i = 0; i < 5; i++) {
         let spotifyResults =
           "--------------------------------------------------------------------" +
@@ -97,10 +111,11 @@ function song() {
         console.log(spotifyResults);
       }
     })
+  
     .catch(function (err) {
       console.log(err);
     });
-
+  }
 } // end of song() function 
 
 
