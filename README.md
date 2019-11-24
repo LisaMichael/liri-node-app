@@ -29,7 +29,7 @@ The response data is then displayed using commands from the command line.
 
 3. Give start-to-finish instructions on how to run the app
 
-###### HOW TO USE THE APPLICATION
+## HOW TO USE THE APPLICATION
 To run the application, open a command Terminal 
 Under the menu options select "Terminal" => "New Terminal Window"
 
@@ -46,7 +46,7 @@ C) 'node liri.js movie-this <title of movie>'
 D) node liri.js do-what-it-says 
     
 
-###### OPTION A: node liri.js concert-this <name of concert event or artist>
+## OPTION A: node liri.js concert-this <name of concert event or artist>
 
 Example command: 
 node liri.js concert-this Taylor Swift 
@@ -59,7 +59,7 @@ The response returned back from the "concert-this" CLI will return:
 
 
 
-###### OPTION B: node liri.js spotify-this-song <name of song track>
+## OPTION B: node liri.js spotify-this-song <name of song track>
 
 Example command: 
 node liri.js spotify-this-song Stairway to Heaven
@@ -72,9 +72,9 @@ The response returned back from the "spotify-this-song" CLI will return:
 * A preview link of the song from Spotify
 * The album that the song is from
 
-## NOTE: If no artist name is specified, the default response will display the song "The Sign" by the artist "Ace of Base". 
+##### NOTE: If no artist name is specified, the default response will display the song "The Sign" by the artist "Ace of Base". 
 
-###### OPTION C: node liri.js movie-this <title of movie>
+## OPTION C: node liri.js movie-this <title of movie>
 
 Example command: 
 node liri.js movie this Terminiator
@@ -90,9 +90,9 @@ The response returned back from the "movie-this" CLI will return:
 * Plot of the movie.
 * Actors in the movie.
 
-## NOTE: If the user does NOT include a movie name in the command, the CLI will output data for the movie 'Mr. Nobody.'
+###### NOTE: If the user does NOT include a movie name in the command, the CLI will output data for the movie 'Mr. Nobody.'
 
-###### OPTION D: node liri.js do-what-it-says 
+## OPTION D: node liri.js do-what-it-says 
 
 4. Include screenshots, gifs or videos of the app functioning
 5. Contain a link to a deployed version of the app
