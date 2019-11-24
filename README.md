@@ -46,7 +46,8 @@ C) `node liri.js movie-this <title of movie>`
 D) `node liri.js do-what-it-says` 
     
 
-## OPTION A: `node liri.js concert-this <name of concert event or artist>`
+## OPTION A: 
+* * `node liri.js concert-this <name of concert event or artist>`
 
 Example command: 
 node liri.js concert-this Taylor Swift 
@@ -59,7 +60,8 @@ The response returned back from the "concert-this" CLI will return:
 
 
 
-## OPTION B: *node liri.js spotify-this-song <name of song track>*
+## OPTION B: 
+* * `node liri.js spotify-this-song <name of song track>`
 
 Example command: 
 node liri.js spotify-this-song Stairway to Heaven
