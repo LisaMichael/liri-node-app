@@ -3,16 +3,16 @@ require("dotenv").config();
 
 
 // declare npm packages 
-var axios = require("axios");
-var keys = require("./keys.js");
-var fs = require("fs");
-var Spotify = require("node-spotify-api");
-var nodeArgs = process.argv;
+let axios = require("axios");
+let keys = require("./keys.js");
+let fs = require("fs");
+let Spotify = require("node-spotify-api");
+let nodeArgs = process.argv;
 
-var userInput = process.argv.splice(3).join(" ");
-var task = process.argv[2];
+let userInput = process.argv.splice(3).join(" ");
+let task = process.argv[2];
 // create new spotify object
-var spotifySong = new Spotify(keys.spotify);
+let spotify = new Spotify(keys.spotify);
 
 // switch statement where i am calling different functions which call the apis used
 
@@ -37,8 +37,8 @@ switch (task) {
 
 function bands() {
 
-// query url for bandintown using band entered in userInput
-  var bandQuery = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
+  // query url for bandintown using band entered in userInput
+  let bandQuery = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
 
   axios.get(bandQuery).then(
     function (response) {
@@ -46,7 +46,7 @@ function bands() {
       let venuesArray = response.data;
       console.log("Venue: ", response.data[0].venue.name);
       //console.log("Venue: ", JSON.stringify(response.data));
-      var temp = response.data[0].datetime.split("T");
+      let temp = response.data[0].datetime.split("T");
 
       console.log("Venue location: " + response.data[0].venue.city);
       console.log("Venue location: " + temp[0]);
@@ -78,11 +78,24 @@ function bands() {
 
 function song() {
 
-console.log("test");
   // this code was taken from example listed on https://www.npmjs.com/package/node-spotify-api
-  spotifySong.search({ type: 'track', query: userInput })
+  if (!userInput) {
+    userInput = "The Sign";
+  }
+  spotify
+    .search({ type: 'track', query: userInput })
     .then(function (response) {
-      console.log(response);
+      // console.log(userInput);
+      for (let i = 0; i < 5; i++) {
+        let spotifyResults =
+          "--------------------------------------------------------------------" +
+          "\nArtist(s): " + response.tracks.items[i].artists[0].name +
+          "\nSong Name: " + response.tracks.items[i].name +
+          "\nAlbum Name: " + response.tracks.items[i].album.name +
+          "\nPreview Link: " + response.tracks.items[i].preview_url;
+
+        console.log(spotifyResults);
+      }
     })
     .catch(function (err) {
       console.log(err);
@@ -98,7 +111,7 @@ function movieQuery() {
 
   // if userput for movie-this is blank, default to Mr. Nobody.
   if (userInput === "") {
-    var queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=trilogy"
+    let queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=trilogy"
     console.log(" * If you haven't watched \"Mr. Nobody,\" then you should: <http://www.imdb.com/title/tt0485947/>");
 
     console.log(" * It's on Netflix!")
@@ -106,7 +119,7 @@ function movieQuery() {
   else {
 
     // api response string for omdb api 
-    var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy"
+    let queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy"
   }
   //console log my query url so i can view the response data
   // console.log(queryUrl);
