@@ -6,15 +6,13 @@ require("dotenv").config();
 var axios = require("axios");
 var keys = require("./keys.js");
 var fs = require("fs");
-var spotify = require("node-spotify-api");
-
+var Spotify = require("node-spotify-api");
 var nodeArgs = process.argv;
-
 
 var userInput = process.argv.splice(3).join(" ");
 var task = process.argv[2];
-
-
+// create new spotify object
+var spotifySong = new Spotify(keys.spotify);
 
 // switch statement where i am calling different functions which call the apis used
 
@@ -33,15 +31,13 @@ switch (task) {
 
 }
 
-
-
 // "Bands in Town code should go here for "concert-this" code "
 // bands in town query url: 
 // https://rest.bandsintown.com/artists/+ artist + /events?app_id=codingbootcamp
 
 function bands() {
 
-
+// query url for bandintown using band entered in userInput
   var bandQuery = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
 
   axios.get(bandQuery).then(
@@ -82,9 +78,9 @@ function bands() {
 
 function song() {
 
-
+console.log("test");
   // this code was taken from example listed on https://www.npmjs.com/package/node-spotify-api
-  spotify.search({ type: 'track', query: 'All the Small Things' })
+  spotifySong.search({ type: 'track', query: userInput })
     .then(function (response) {
       console.log(response);
     })
@@ -92,27 +88,25 @@ function song() {
       console.log(err);
     });
 
-} // end of band() function 
-
+} // end of song() function 
 
 
 // OMDBAPI code should go here for "movie-this" code "
-// call movie code here 
-// movieQuery();
+// call movie-this code here 
 
 function movieQuery() {
 
   // if userput for movie-this is blank, default to Mr. Nobody.
   if (userInput === "") {
-    var queryUrl =  "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=trilogy"
+    var queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=trilogy"
     console.log(" * If you haven't watched \"Mr. Nobody,\" then you should: <http://www.imdb.com/title/tt0485947/>");
 
     console.log(" * It's on Netflix!")
   }
   else {
 
-  // api response string for omdb api 
-  var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy"
+    // api response string for omdb api 
+    var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy"
   }
   //console log my query url so i can view the response data
   // console.log(queryUrl);
@@ -131,9 +125,9 @@ function movieQuery() {
       console.log("The plot of the movie is: " + response.data.Plot);
       console.log("The movie actors are: " + response.data.Actors);
     }
-  
+
   )
-  
+
     //logic for catching errors 
     .catch(function (error) {
       if (error.response) {
@@ -155,15 +149,8 @@ function movieQuery() {
       }
       console.log(error.config);
     });
-  
+
 } // end of movie() function
-
-
-// }
-
-//bands in town function code should go here 
-
-
 
 
 // code should go here for "do-what-it-says" code "
