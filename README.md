@@ -39,9 +39,9 @@ Your options are:
 
 A) node liri.js concert-this <name of concert event or artist>
     
-B) node liri.js spotify-this-song <name of song track>
+B) 'node liri.js spotify-this-song <name of song track>'
     
-C) node liri.js movie-this &lt<title of movie>
+C) 'node liri.js movie-this <title of movie>'
     
 D) node liri.js do-what-it-says 
     
@@ -57,7 +57,7 @@ The response returned back from the "concert-this" CLI will return:
 * Venue location
 * Date of the Event (using the format this as "MM/DD/YYYY")
 
-NOTE: If no artist name is specified, the default response will display the song "The Sign" by the artist "Ace of Base".
+
 
 ###### OPTION B: node liri.js spotify-this-song <name of song track>
 
@@ -65,7 +65,6 @@ Example command:
 node liri.js spotify-this-song Stairway to Heaven
 
 The command will query the spotify.com website.
-
 The response returned back from the "spotify-this-song" CLI will return: 
 
 * Artist(s)
@@ -73,7 +72,25 @@ The response returned back from the "spotify-this-song" CLI will return:
 * A preview link of the song from Spotify
 * The album that the song is from
 
+## NOTE: If no artist name is specified, the default response will display the song "The Sign" by the artist "Ace of Base". 
+
 ###### OPTION C: node liri.js movie-this <title of movie>
+
+Example command: 
+node liri.js movie this Terminiator
+
+The response returned back from the "movie-this" CLI will return: 
+
+* Title of the movie.
+* Year the movie came out.
+* IMDB Rating of the movie.
+* Rotten Tomatoes Rating of the movie.
+* Country where the movie was produced.
+* Language of the movie.
+* Plot of the movie.
+* Actors in the movie.
+
+## NOTE: If the user does NOT include a movie name in the command, the CLI will output data for the movie 'Mr. Nobody.'
 
 ###### OPTION D: node liri.js do-what-it-says 
 
