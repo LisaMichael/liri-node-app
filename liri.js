@@ -9,15 +9,15 @@ var fs = require("fs");
 
 var nodeArgs = process.argv;
 
-// "Bands in Town code should go here for "concert-this" code "
-// bands in town query url: 
-// https://rest.bandsintown.com/artists/+ artist + /events?app_id=codingbootcamp
+
 var userInput = process.argv.splice(3).join(" ");
 var task = process.argv[2];
 
 
 // referenced for loop in wk 10 exercise 18 OMDB_Axios_Students to 
 // create loop for movies titles containing mutliple words
+
+
 
 
 switch(task){
@@ -27,8 +27,22 @@ case "concert-this":
 // case spotify:
 //   song();
 //   break;
+
+case "movie-this": 
+movieQuery();
+break;
+
 }
+
+
+
+// "Bands in Town code should go here for "concert-this" code "
+// bands in town query url: 
+// https://rest.bandsintown.com/artists/+ artist + /events?app_id=codingbootcamp
+
 function bands(){
+
+
 var bandQuery = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
 
 axios.get(bandQuery).then(
@@ -72,8 +86,12 @@ var spotify = require("node-spotify-api");
 // call movie code here 
 // movieQuery();
 
-let movieQuery = (userInput) => {
+function movieQuery() {
   
+
+  // api response string for omdb api 
+var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy"
+
 //console log my query url so i can view the response data
 // console.log(queryUrl);
 
