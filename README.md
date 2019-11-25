@@ -1,7 +1,5 @@
-###### AUTHOR: Lisa Michael
-###### ROLE: DEVELOPER
-###### HW: WK10 
-###### LIRI-NODE-APP
+###### AUTHOR: Lisa Michael -  ROLE: DEVELOPER
+###### HW: WK10 - LIRI-NODE-APP
 
 ###### INTRODUCTION
 In this assignment, I created an application called LIRI. LIRI is similar to the iPhone's SIRI application.  
