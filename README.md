@@ -80,6 +80,8 @@ The response returned back from the "spotify-this-song" CLI will return:
 
 ##### NOTE: If no artist name is specified, the default response will display the song "The Sign" by the artist "Ace of Base". 
 
+https://user-images.githubusercontent.com/24717213/69505121-25f86180-0ef6-11ea-93b8-99b8fd1974e6.png
+
 ## OPTION C: Search for movie title using OMDBAPI
 * * `node liri.js movie-this <title of movie>`
 
