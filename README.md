@@ -3,13 +3,8 @@
 ###### HW: WK10 
 ###### LIRI-NODE-APP
 
-
-In order to meet the Employer Competitive standards and be ready to show your application to employers, the `README.md` file should meet the following criteria:
-
-1. Clearly state the problem the app is trying to solve (i.e. what is it doing and why)
-
 ###### INTRODUCTION
-In this assignment, I created an application called LIRI. LIRI is simlar to the iPhone's SIRI application.  
+In this assignment, I created an application called LIRI. LIRI is similar to the iPhone's SIRI application.  
 
 While SIRI is an acronym for "Speech Interpretation and Recogition Interface", LIRI is a "Language Interpretation and Recognition Interface".
 
