@@ -52,6 +52,7 @@ D) `node liri.js do-what-it-says`
 Example command: 
 node liri.js concert-this Taylor Swift 
 
+https://user-images.githubusercontent.com/24717213/69504999-33f9b280-0ef5-11ea-8f02-77cefc4c62fe.png
 
 The command will query the bandsintown.com website.
 The response returned back from the "concert-this" CLI will return: 
