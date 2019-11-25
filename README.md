@@ -1,5 +1,6 @@
 ###### AUTHOR: Lisa Michael -  ROLE: DEVELOPER
 ###### HW: WK10 - LIRI-NODE-APP
+###### url: https://lisamichael.github.io/liri-node-app/
 
 ###### INTRODUCTION
 In this assignment, I created an application called LIRI. LIRI is similar to the iPhone's SIRI application.  
@@ -108,9 +109,11 @@ https://user-images.githubusercontent.com/24717213/69504909-a0c07d00-0ef4-11ea-8
 ## OPTION D: Read text from a text file using fs NPM
 * * `node liri.js do-what-it-says`
 
+https://user-images.githubusercontent.com/24717213/69505408-cef38c00-0ef7-11ea-9b03-eae1fd18bf3e.png
+
 There are no extra parameters needed to use the "do-what-it-says" command.
 LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 
+ie) content of random.txt: 
+spotify-this-song,"I Want it That Way"
 
-4. Include screenshots, gifs or videos of the app functioning
-5. Contain a link to a deployed version of the app
