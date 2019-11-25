@@ -52,6 +52,7 @@ D) `node liri.js do-what-it-says`
 Example command: 
 node liri.js concert-this Taylor Swift 
 
+
 The command will query the bandsintown.com website.
 The response returned back from the "concert-this" CLI will return: 
 * Name of the venue
@@ -80,7 +81,9 @@ The response returned back from the "spotify-this-song" CLI will return:
 * * `node liri.js movie-this <title of movie>`
 
 Example command: 
-node liri.js movie this Terminiator
+node liri.js movie-this school of rock
+
+(https://user-images.githubusercontent.com/24717213/69504804-e9c40180-0ef3-11ea-876f-53b59707c7ca.png
 
 The response returned back from the "movie-this" CLI will return: 
 
