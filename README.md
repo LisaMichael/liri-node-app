@@ -98,6 +98,8 @@ The response returned back from the "movie-this" CLI will return:
 
 ###### NOTE: If the user does NOT include a movie name in the command, the CLI will output data for the movie 'Mr. Nobody.'
 
+https://user-images.githubusercontent.com/24717213/69504909-a0c07d00-0ef4-11ea-8596-102fe5bc0d10.png
+
 ## OPTION D: Read text from a text file using fs NPM
 * * `node liri.js do-what-it-says`
 
