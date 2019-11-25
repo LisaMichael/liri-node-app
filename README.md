@@ -68,6 +68,8 @@ The response returned back from the "concert-this" CLI will return:
 Example command: 
 node liri.js spotify-this-song Stairway to Heaven
 
+https://user-images.githubusercontent.com/24717213/69505058-b1252780-0ef5-11ea-81ba-3951b283f9ed.png
+
 The command will query the spotify.com website.
 The response returned back from the "spotify-this-song" CLI will return: 
 
