@@ -146,7 +146,7 @@ function song() {
 // OMDBAPI code should go here for "movie-this" code "
 // call movie-this code here 
 function movieQuery() {
-  console.log(userInput);
+
   // if userput for movie-this is blank, default to Mr. Nobody.
   if (userInput === "") {
     var queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=trilogy"
@@ -158,22 +158,22 @@ function movieQuery() {
 
     // api response string for omdb api 
     var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy"
-    
+
   }
 
   // We then run the get request with axios module on the URL 
   axios.get(queryUrl).then(function (response) {
 
-      // Then we print out the response data 
-      console.log("The movie's Title is: " + response.data.Title);
-      console.log("The year of the movie is: " + response.data.Year);
-      console.log("The movie's IMDB rating is: " + response.data.imdbRating);
-      console.log("The movie's Rotten Tomatoes rating is: " + response.data.Ratings[1].Value);
-      console.log("The movie's Country of origin is: " + response.data.Country);
-      console.log("The movie's Language is: " + response.data.Language);
-      console.log("The plot of the movie is: " + response.data.Plot);
-      console.log("The movie actors are: " + response.data.Actors);
-    }
+    // Then we print out the response data 
+    console.log("The movie's Title is: " + response.data.Title);
+    console.log("The year of the movie is: " + response.data.Year);
+    console.log("The movie's IMDB rating is: " + response.data.imdbRating);
+    console.log("The movie's Rotten Tomatoes rating is: " + response.data.Ratings[1].Value);
+    console.log("The movie's Country of origin is: " + response.data.Country);
+    console.log("The movie's Language is: " + response.data.Language);
+    console.log("The plot of the movie is: " + response.data.Plot);
+    console.log("The movie actors are: " + response.data.Actors);
+  }
 
   )
 
@@ -203,21 +203,20 @@ function movieQuery() {
 
 
 // code should go here for "do-what-it-says" code "
-
+// function to run doRandom() function
 function doRandom() {
   fs.readFile("random.txt", "utf8", function (error, data) {
+    //split the text in the random.txt file 
     let dataArr = data.split(",");
-    console.log(dataArr);
+
+    //declare the first half of text file as the task variable
     task = dataArr[0];
+    //declare the second half of the random.txt as userInput variable 
     userInput = (dataArr[1]);
 
-    if (dataArr[0] != "spotify-this-song") {
-      task = "spotify-this-song";
-    }
 
-    console.log(task);
-
-
+    //switch statement to call the function for the specific command 
+    // that is configured in the random.txt 
     switch (task) {
       case "concert-this":
         bands();
