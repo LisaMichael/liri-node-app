@@ -112,7 +112,7 @@ https://user-images.githubusercontent.com/24717213/69504909-a0c07d00-0ef4-11ea-8
 https://user-images.githubusercontent.com/24717213/69505408-cef38c00-0ef7-11ea-9b03-eae1fd18bf3e.png
 
 There are no extra parameters needed to use the "do-what-it-says" command.
-LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+LIRI will read the text inside of random.txt and then use it to call one of LIRI's commands.
 
 ie) content of random.txt: 
 spotify-this-song,"I Want it That Way"
