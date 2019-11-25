@@ -146,10 +146,10 @@ function song() {
 // OMDBAPI code should go here for "movie-this" code "
 // call movie-this code here 
 function movieQuery() {
-
+  console.log(userInput);
   // if userput for movie-this is blank, default to Mr. Nobody.
   if (userInput === "") {
-    let queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=trilogy"
+    var queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=trilogy"
     console.log(" * If you haven't watched \"Mr. Nobody,\" then you should: <http://www.imdb.com/title/tt0485947/>");
 
     console.log(" * It's on Netflix!")
@@ -157,14 +157,12 @@ function movieQuery() {
   else {
 
     // api response string for omdb api 
-    let queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy"
+    var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy"
+    
   }
-  //console log my query url so i can view the response data
-  // console.log(queryUrl);
 
   // We then run the get request with axios module on the URL 
-  axios.get(queryUrl).then(
-    function (response) {
+  axios.get(queryUrl).then(function (response) {
 
       // Then we print out the response data 
       console.log("The movie's Title is: " + response.data.Title);
@@ -209,28 +207,30 @@ function movieQuery() {
 function doRandom() {
   fs.readFile("random.txt", "utf8", function (error, data) {
     let dataArr = data.split(",");
-    console.log(data);
-    task = (dataArr[0]);
-    userInput = dataArr[1];
-    // console.log(task);
-    // console.log(userInput);
+    console.log(dataArr);
+    task = dataArr[0];
+    userInput = (dataArr[1]);
+
+    if (dataArr[0] != "spotify-this-song") {
+      task = "spotify-this-song";
+    }
+
+    console.log(task);
+
 
     switch (task) {
       case "concert-this":
         bands();
         break;
-    
+
       case "spotify-this-song":
         song();
         break;
-    
+
       case "movie-this":
         movieQuery();
         break;
-    
-      case "do-what-it-says":
-        doRandom();
-        break;
+
     }
     // If the code experiences any errors it will log the error to the console.
     if (error) {
