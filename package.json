@@ -19,6 +19,6 @@
   "homepage": "https://github.com/LisaMichael/liri-node-app#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "moment": "^2.24.0"
+    "moment": "^2.29.2"
   }
 }
